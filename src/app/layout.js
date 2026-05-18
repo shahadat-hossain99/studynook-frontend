@@ -19,7 +19,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html data-theme="light" lang="en" className={`h-full antialiased`}>
-      <body className={`${poppins.className} min-h-full flex flex-col`}>
+      <body
+        className={`${poppins.className} min-h-full flex flex-col`}
+        suppressHydrationWarning={true}
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />
