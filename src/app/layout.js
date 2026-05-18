@@ -1,5 +1,7 @@
 import { Space_Grotesk, Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Shared/Navbar/Navbar";
+import Footer from "@/components/Shared/Footer/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -18,7 +20,9 @@ export default function RootLayout({ children }) {
   return (
     <html data-theme="light" lang="en" className={`h-full antialiased`}>
       <body className={`${poppins.className} min-h-full flex flex-col`}>
+        <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
