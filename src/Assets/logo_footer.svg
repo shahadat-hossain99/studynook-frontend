@@ -1,0 +1,35 @@
+<svg aria-labelledby="studynook-footer-title" viewBox="0 0 200 80" height="80" width="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient y2="100%" x2="80%" y1="0%" x1="0%" id="bG">
+      <stop stop-color="#1e4d8c" offset="0%"></stop>
+      <stop stop-color="#2660b0" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient y2="100%" x2="20%" y1="0%" x1="100%" id="gG">
+      <stop stop-color="#d4a820" offset="0%"></stop>
+      <stop stop-color="#a87510" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient y2="100%" x2="100%" y1="0%" x1="0%" id="mG">
+      <stop stop-color="#1e4d8c" offset="0%"></stop>
+      <stop stop-color="#7a7060" offset="50%"></stop>
+      <stop stop-color="#c8981a" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  
+  
+  <g transform="translate(65,8) scale(0.23)">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="7" stroke="url(#bG)" fill="none" d="M100,168 C96,152 74,125 44,88 C28,65 20,44 24,24 C28,10 42,6 58,12 C76,19 95,48 100,72 Z"></path>
+    <path opacity="0.55" stroke-linecap="round" stroke-width="4.5" stroke="url(#bG)" fill="none" d="M100,168 C96,148 82,115 70,82 C62,60 58,40 62,22"></path>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="7" stroke="url(#gG)" fill="none" d="M100,168 C104,152 126,125 156,88 C172,65 180,44 176,24 C172,10 158,6 142,12 C124,19 105,48 100,72 Z"></path>
+    <path opacity="0.55" stroke-linecap="round" stroke-width="4.5" stroke="url(#gG)" fill="none" d="M100,168 C104,148 118,115 130,82 C138,60 142,40 138,22"></path>
+    <path stroke-linecap="round" stroke-width="7" stroke="url(#mG)" fill="none" d="M30,178 Q100,196 170,178"></path>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5" stroke="url(#gG)" fill="none" d="M66,108 C66,86 134,86 134,108 L134,130 C134,136 122,139 100,139 C78,139 66,136 66,130 Z"></path>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5" stroke="url(#gG)" fill="none" d="M52,128 C52,122 66,119 66,119 L134,119 C134,119 148,122 148,128 L148,146 C148,153 134,156 134,156 L66,156 C66,156 52,153 52,146 Z"></path>
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="6.5" stroke="url(#gG)" fill="none" d="M52,127 C47,122 42,114 42,105 L42,91 C42,84 50,81 57,86 L66,96"></path>
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="6.5" stroke="url(#gG)" fill="none" d="M148,127 C153,122 158,114 158,105 L158,91 C158,84 150,81 143,86 L134,96"></path>
+    <path stroke-linecap="round" stroke-width="6" stroke="url(#gG)" d="M64,156 L60,178"></path>
+    <path stroke-linecap="round" stroke-width="6" stroke="url(#gG)" d="M136,156 L140,178"></path>
+  </g>
+
+  
+  <text letter-spacing="-0.8px" text-anchor="middle" fill="#1e4d8c" font-weight="700" font-size="22" font-family="Arial Black, sans-serif" y="72" x="100">STUDYNOOK</text>
+</svg>
