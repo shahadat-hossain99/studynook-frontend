@@ -2,6 +2,7 @@ import { Space_Grotesk, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Shared/Navbar/Navbar";
 import Footer from "@/components/Shared/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -26,6 +27,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+
+        <ToastContainer />
       </body>
     </html>
   );
