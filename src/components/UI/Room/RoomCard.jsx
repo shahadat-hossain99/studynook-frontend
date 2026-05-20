@@ -24,7 +24,7 @@ const RoomCard = ({ room }) => {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0B1120] via-[#0B1120]/10 to-transparent" />
       </div>
 
       {/* CONTENT */}
@@ -75,7 +75,7 @@ const RoomCard = ({ room }) => {
           <Link href={`/rooms/${_id}`}>
             <Button
               radius="full"
-              className="w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold"
+              className="w-full bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold"
             >
               View Details
               <FaArrowRight />

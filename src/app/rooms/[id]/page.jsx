@@ -15,6 +15,7 @@ import { LuProjector, LuPlugZap } from "react-icons/lu";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
 
 import { MdAttachMoney } from "react-icons/md";
+import BookingButton from "@/components/UI/RoomDetails/BookingButton";
 
 const amenityIcons = {
   "Wi-Fi": <FaWifi />,
@@ -51,11 +52,11 @@ const roomDetailsPage = async ({ params }) => {
           {/* LEFT SIDE */}
           <div>
             {/* IMAGE */}
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 h-[300px] md:h-[450px] xl:h-[520px]">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 h-75 md:h-112.5 xl:h-130">
               <Image src={image} alt={roomName} fill className="object-cover" />
 
               {/* OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
 
               {/* BADGE */}
               <div className="absolute top-5 left-5">
@@ -92,7 +93,7 @@ const roomDetailsPage = async ({ params }) => {
                   </h2>
                 </div>
 
-                <div className="rounded-full bg-gradient-to-r from-violet-500 to-cyan-500 px-5 py-2 text-sm font-semibold text-white">
+                <div className="rounded-full bg-linear-to-r from-violet-500 to-cyan-500 px-5 py-2 text-sm font-semibold text-white">
                   Available Now
                 </div>
               </div>
@@ -169,13 +170,7 @@ const roomDetailsPage = async ({ params }) => {
               </div>
 
               {/* BUTTON */}
-              <Button
-                radius="full"
-                size="lg"
-                className="mt-8 w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold h-14 text-base"
-              >
-                Book This Room
-              </Button>
+              <BookingButton room={room} />
             </div>
 
             {/* AMENITIES */}

@@ -313,7 +313,7 @@ const AddRoomForm = () => {
                 type="submit"
                 size="lg"
                 radius="lg"
-                className="w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold text-base hover:scale-[1.01] transition-all duration-300"
+                className="w-full bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold text-base hover:scale-[1.01] transition-all duration-300"
               >
                 Add Study Room
               </Button>

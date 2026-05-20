@@ -75,7 +75,7 @@ const loading = () => {
           </svg>
 
           {/* CENTER ICON */}
-          <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center backdrop-blur-xl">
+          <div className="relative w-14 h-14 rounded-2xl bg-linear-to-br from-violet-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center backdrop-blur-xl">
             <svg
               viewBox="0 0 200 205"
               width="34"
@@ -191,7 +191,7 @@ const loading = () => {
           <span className="text-2xl font-black tracking-wide text-white">
             Study
           </span>
-          <span className="text-2xl font-black tracking-wide bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+          <span className="text-2xl font-black tracking-wide bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
             Nook
           </span>
         </div>
@@ -203,12 +203,12 @@ const loading = () => {
 
         {/* PROGRESS BAR */}
         <div className="w-48 h-0.5 rounded-full bg-white/5 overflow-hidden">
-          <div className="loading-bar h-full w-full rounded-full bg-gradient-to-r from-violet-500 to-cyan-500" />
+          <div className="loading-bar h-full w-full rounded-full bg-linear-to-r from-violet-500 to-cyan-500" />
         </div>
 
         {/* AMBIENT GLOW */}
         <div className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
-          <div className="glow-1 absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-violet-600/5 blur-3xl" />
+          <div className="glow-1 absolute -top-40 left-1/2 -translate-x-1/2 w-150 h-150 rounded-full bg-violet-600/5 blur-3xl" />
           <div className="glow-2 absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-cyan-600/5 blur-3xl" />
         </div>
       </div>
