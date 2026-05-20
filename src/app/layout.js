@@ -6,11 +6,13 @@ import { ToastContainer } from "react-toastify";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "900"],
+  weight: ["400", "500", "600", "700"],
 });
 export const metadata = {
   title: " StudyNook ",
@@ -19,7 +21,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html data-theme="light" lang="en" className={`h-full antialiased`}>
+    <html
+      data-theme="light"
+      lang="en"
+      className={`${spaceGrotesk.variable} h-full antialiased`}
+    >
       <body
         className={`${poppins.className} min-h-full flex flex-col`}
         suppressHydrationWarning={true}

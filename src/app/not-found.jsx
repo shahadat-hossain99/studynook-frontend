@@ -9,12 +9,12 @@ const NotFound = () => {
     <section className="min-h-screen bg-[#0B1120] flex items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center">
         {/* 404 */}
-        <h1 className="text-8xl md:text-9xl font-black bg-linear-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent">
+        <h1 className="font-(family-name:--font-space-grotesk) text-8xl md:text-9xl  bg-linear-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent font-extrabold">
           404
         </h1>
 
         {/* Title */}
-        <h2 className="mt-6 text-3xl md:text-5xl font-bold text-white">
+        <h2 className="font-(family-name:--font-space-grotesk) mt-6 text-3xl md:text-5xl font-bold text-white">
           Page Not Found
         </h2>
 

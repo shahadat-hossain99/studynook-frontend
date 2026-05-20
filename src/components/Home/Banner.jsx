@@ -35,7 +35,7 @@ const Banner = () => {
           </div>
 
           {/* HEADING */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight text-white ">
             Find Your Perfect
             <span className="block bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               Study Environment
