@@ -103,7 +103,7 @@ const RegisterPage = () => {
     "flex-1 min-w-0 bg-transparent text-white placeholder:text-slate-500 text-sm focus:outline-none";
 
   return (
-    <div className="min-h-screen bg-[#0B1120] px-4 py-15 flex items-center justify-center">
+    <div className="min-h-screen bg-[#0B1120] py-14  flex  justify-center">
       <div className="w-full max-w-xl ">
         <Card className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl ">
           <div className="p-8 md:p-10">
