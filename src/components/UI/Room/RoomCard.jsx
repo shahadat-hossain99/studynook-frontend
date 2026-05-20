@@ -30,7 +30,7 @@ const RoomCard = ({ room }) => {
       {/* CONTENT */}
       <div className="p-6">
         {/* NAME */}
-        <h2 className="text-2xl font-bold text-white line-clamp-1">
+        <h2 className="text-2xl font-bold text-white line-clamp-1 font-(family-name:--font-space-grotesk)">
           {roomName}
         </h2>
 
