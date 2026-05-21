@@ -106,6 +106,16 @@ const RegisterPage = () => {
     }
   };
 
+  const handleGoogle = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+
+    if (data) {
+      toast.success("Registered Your Account Successfully");
+    }
+  };
+
   const fieldBox = (hasError) =>
     `flex items-center gap-3 border rounded-2xl bg-white/5 px-4 h-14 transition-colors ${
       hasError
@@ -288,6 +298,7 @@ const RegisterPage = () => {
 
             {/* GOOGLE BUTTON */}
             <Button
+              onClick={handleGoogle}
               radius="full"
               variant="bordered"
               className="w-full h-14 border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition"
