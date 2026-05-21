@@ -16,6 +16,8 @@ import { HiMiniSpeakerWave } from "react-icons/hi2";
 
 import { MdAttachMoney } from "react-icons/md";
 import BookingButton from "@/components/UI/RoomDetails/BookingButton";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const amenityIcons = {
   "Wi-Fi": <FaWifi />,
@@ -28,8 +30,16 @@ const amenityIcons = {
 
 const roomDetailsPage = async ({ params }) => {
   const { id } = await params;
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  console.log(token);
 
-  const res = await fetch(`http://localhost:5004/room/${id}`);
+  const res = await fetch(`http://localhost:5004/room/${id}`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
   const room = await res.json();
   console.log(room);
 
