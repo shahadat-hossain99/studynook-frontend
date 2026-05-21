@@ -15,6 +15,8 @@ import {
 } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
+import { redirect } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 // PASSWORD RULES
 
@@ -67,6 +69,9 @@ const RegisterPage = () => {
   //SUBMIT
   const handleRegister = async (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const user = Object.fromEntries(formData.entries());
 
     const name = e.target.name.value;
     const email = e.target.email.value;
@@ -80,15 +85,24 @@ const RegisterPage = () => {
 
     setErrors({});
 
+    const { data, error } = await authClient.signUp.email({
+      email: user.email,
+      name: user.name,
+      password: user.password,
+      image: user.photoURL,
+    });
+
     try {
       setLoading(true);
-      console.log({ name, email, photoURL, password });
+      // console.log(user, error);
 
       toast.success("Registration successful! Please login.");
+      // console.log(data);
     } catch {
       toast.error("Registration failed");
     } finally {
       setLoading(false);
+      redirect("/login");
     }
   };
 
@@ -103,7 +117,7 @@ const RegisterPage = () => {
     "flex-1 min-w-0 bg-transparent text-white placeholder:text-slate-500 text-sm focus:outline-none";
 
   return (
-    <div className="min-h-screen bg-[#0B1120] py-14  flex  justify-center">
+    <div className="min-h-screen bg-[#0B1120] py-14  px-4 flex  justify-center">
       <div className="w-full max-w-xl ">
         <Card className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl ">
           <div className="p-8 md:p-10">
@@ -127,6 +141,7 @@ const RegisterPage = () => {
                 <div className={fieldBox(errors.name)}>
                   <FaUser className="text-cyan-400 text-lg shrink-0" />
                   <input
+                    required
                     name="name"
                     type="text"
                     placeholder="Enter your full name"

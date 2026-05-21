@@ -6,6 +6,8 @@ import { Button, Card } from "@heroui/react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
+import { authClient } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
@@ -41,6 +43,9 @@ const LoginPage = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const user = Object.fromEntries(formData.entries());
 
     const errs = validate(values);
     if (Object.keys(errs).length > 0) {
@@ -48,15 +53,22 @@ const LoginPage = () => {
       return;
     }
 
+    const { data, error } = await authClient.signIn.email({
+      email: user.email,
+      password: user.password,
+    });
+
     try {
       setLoading(true);
       console.log(values);
 
       toast.success("Login successful");
+      console.log({ data, error });
     } catch {
       toast.error("Invalid email or password");
     } finally {
       setLoading(false);
+      redirect("/rooms");
     }
   };
 
@@ -68,7 +80,7 @@ const LoginPage = () => {
     }`;
 
   return (
-    <div className="min-h-screen bg-[#0B1120]  flex  justify-center py-20 ">
+    <div className="min-h-screen bg-[#0B1120]  flex  justify-center px-4 py-20 ">
       <div className="w-full max-w-md">
         <Card className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl">
           <div className="p-8 md:p-10">
