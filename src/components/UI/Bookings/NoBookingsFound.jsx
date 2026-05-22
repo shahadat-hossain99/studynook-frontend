@@ -21,7 +21,7 @@ const NoBookingsFound = () => {
 
       {/* CTA */}
       <Link href="/rooms" className="mt-8">
-        <button className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold hover:opacity-90 transition">
+        <button className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold hover:opacity-90 transition">
           Explore Rooms
         </button>
       </Link>

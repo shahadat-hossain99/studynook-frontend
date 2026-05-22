@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MdCalendarMonth, MdAccessTime, MdAttachMoney } from "react-icons/md";
 import { HiArrowRight } from "react-icons/hi";
 import CancelModal from "./CancelModal";
+import Image from "next/image";
 const BookingCard = ({ booking, onCancelled }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -30,12 +31,13 @@ const BookingCard = ({ booking, onCancelled }) => {
 
         <div className="flex flex-col md:flex-row md:items-center gap-6 px-7 py-6">
           {/* Room image */}
-          <div className="w-full md:w-28 h-28 rounded-xl overflow-hidden shrink-0 bg-white/5">
+          <div className="w-full md:w-28 h-28 rounded-xl overflow-hidden shrink-0 bg-white/5 relative">
             {booking.roomImage ? (
-              <img
+              <Image
                 src={booking.roomImage}
                 alt={booking.roomName}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-slate-600 text-3xl">

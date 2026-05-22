@@ -11,7 +11,6 @@ const CancelModal = ({ isOpen, onClose, bookingId, roomName, onCancelled }) => {
   const [loading, setLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -69,7 +68,7 @@ const CancelModal = ({ isOpen, onClose, bookingId, roomName, onCancelled }) => {
   if (!mounted || !isOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center p-4">
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}

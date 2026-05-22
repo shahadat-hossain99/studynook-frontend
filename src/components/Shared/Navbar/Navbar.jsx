@@ -111,7 +111,7 @@ const Navbar = () => {
     <>
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#0B1120]/80 backdrop-blur-xl">
-        <div className="max-w-4/5 mx-auto h-20 px-4 md:px-6 flex items-center justify-between">
+        <div className="max-w-11/12 mx-auto h-20 px-4 md:px-6 flex items-center justify-between">
           {/* LEFT */}
 
           <div className="flex justify-between items-center gap-20">
@@ -196,7 +196,7 @@ const Navbar = () => {
                       </div> */}
                     </Dropdown.Trigger>
 
-                    <Dropdown.Popover className="bg-[#111827] border border-white/10 shadow-2xl shadow-black/50 min-w-[220px] rounded-2xl">
+                    <Dropdown.Popover className="bg-[#111827] border border-white/10 shadow-2xl shadow-black/50 min-w-55 rounded-2xl">
                       <Dropdown.Menu
                         aria-label="Profile Actions"
                         className="text-white p-1"
@@ -268,6 +268,14 @@ const Navbar = () => {
                       </Dropdown.Menu>
                     </Dropdown.Popover>
                   </Dropdown>
+
+                  <Button
+                    onPress={handleLogout}
+                    className="w-full bg-red-500/10 text-red-400 border border-red-500/20"
+                  >
+                    <FaSignOutAlt />
+                    Logout
+                  </Button>
                 </>
               ) : (
                 <>
@@ -287,7 +295,7 @@ const Navbar = () => {
                   <Link href="/register">
                     <Button
                       radius="lg"
-                      className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold p-5 flex gap-3"
+                      className="bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold p-5 flex gap-3"
                     >
                       <FaUserPlus />
                       Register

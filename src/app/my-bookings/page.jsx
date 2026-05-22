@@ -46,7 +46,7 @@ const MyBookingPage = () => {
 
   return (
     <section className="min-h-screen bg-[#0B1120] py-16 px-4">
-      <div className="max-w-4/5 mx-auto">
+      <div className="max-w-11/12 mx-auto">
         <div className="mb-14">
           <h1 className="mt-6 text-4xl md:text-6xl font-bold text-white md:leading-18 font-(family-name:--font-space-grotesk)">
             My{" "}

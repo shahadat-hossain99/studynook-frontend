@@ -9,7 +9,7 @@ const RoomPage = async () => {
 
   return (
     <section className="min-h-screen bg-[#0B1120] py-16 px-4">
-      <div className="max-w-4/5 mx-auto">
+      <div className="max-w-11/12 mx-auto">
         {/* HEADING */}
         <div className="text-center mb-14">
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-slate-300 backdrop-blur-xl">
