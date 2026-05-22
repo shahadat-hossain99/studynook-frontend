@@ -335,7 +335,7 @@ const Navbar = () => {
 
       {/* MOBILE DRAWER */}
       <div
-        className={`fixed  top-0 left-0 z-50 h-full w-[300px] bg-[#0F172A] border-r border-white/10 p-5 transition-all duration-300 lg:hidden ${
+        className={`fixed  top-0 left-0 z-50 h-full w-75 bg-[#0F172A] border-r border-white/10 p-5 transition-all duration-300 lg:hidden ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -426,7 +426,7 @@ const Navbar = () => {
               </Link>
 
               <Link href="/register">
-                <Button className="w-full bg-gradient-to-r from-violet-500 to-cyan-500 text-white">
+                <Button className="w-full bg-linear-to-r from-violet-500 to-cyan-500 text-white">
                   <FaUserPlus />
                   Register
                 </Button>

@@ -21,8 +21,8 @@ const RoomPage = async () => {
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
-            Explore Premium
-            <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+            Explore Premium <br />
+            <span className=" bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               Study Spaces
             </span>
           </h1>

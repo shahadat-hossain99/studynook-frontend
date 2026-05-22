@@ -87,7 +87,7 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
           totalHours,
           totalCost,
           specialNote: note,
-          userEmail: session?.user?.email,
+          // userEmail: session?.user?.email,
         }),
       });
 

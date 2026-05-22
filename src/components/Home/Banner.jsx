@@ -64,7 +64,7 @@ const Banner = () => {
                 <FaArrowRight />
               </Button>
             </Link>
-            <Link href="/add-room" className="w-full sm:w-auto">
+            <Link href="/add-rooms" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 radius="lg"
