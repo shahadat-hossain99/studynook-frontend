@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
@@ -44,6 +44,8 @@ const Navbar = () => {
   const handleLogout = async () => {
     await authClient.signOut();
     toast.success("Successfully Logged out");
+
+    redirect("/");
   };
 
   const isActive = (href) => pathname === href;
