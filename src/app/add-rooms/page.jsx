@@ -123,7 +123,7 @@ const AddRoomForm = () => {
       <div className="max-w-5xl mx-auto">
         {/* HEADING */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-4xl md:text-5xl font-bold text-white font-(family-name:--font-space-grotesk)">
             Add New Study Room
           </h1>
 
@@ -253,7 +253,7 @@ const AddRoomForm = () => {
 
               {/* AMENITIES */}
               <div>
-                <h3 className="text-xl font-semibold text-white mb-5">
+                <h3 className="text-xl font-semibold text-white mb-5 font-(family-name:--font-space-grotesk)">
                   Room Amenities
                 </h3>
 

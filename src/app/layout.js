@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html
       data-theme="light"
       lang="en"
-      className={`${spaceGrotesk.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} h-full antialiased `}
     >
       <body
         className={`${poppins.className} min-h-full flex flex-col`}

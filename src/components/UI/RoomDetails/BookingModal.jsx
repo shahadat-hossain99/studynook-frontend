@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import React, { useMemo, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { MdCalendarMonth, MdAttachMoney, MdClose } from "react-icons/md";
@@ -55,6 +56,8 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
 
   const totalCost = totalHours * (room?.hourlyRate || 0);
 
+  const { data: session } = authClient.useSession();
+
   const handleBooking = async (e) => {
     e.preventDefault();
     if (!bookingDate || !startTime || !endTime) {
@@ -63,19 +66,38 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
     }
     try {
       setLoading(true);
-      const bookingData = {
-        roomId: room?._id,
-        roomName: room?.roomName,
-        roomImage: room?.image,
-        bookingDate,
-        startTime,
-        endTime,
-        totalHours,
-        totalCost,
-        specialNote: note,
-        status: "confirmed",
-      };
-      console.log(bookingData);
+
+      // ! JWT Token Accessing from client
+      const { data: tokenData } = await authClient.token();
+      // console.log(tokenData);
+
+      const res = await fetch(`http://localhost:5004/bookings`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${tokenData?.token}`,
+        },
+        body: JSON.stringify({
+          roomId: room?._id,
+          roomName: room?.roomName,
+          roomImage: room?.image,
+          bookingDate,
+          startTime,
+          endTime,
+          totalHours,
+          totalCost,
+          specialNote: note,
+          userEmail: session?.user?.email,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || "Booking failed.");
+        return;
+      }
+
       toast.success("Room booked successfully!");
       setBookingDate("");
       setStartTime("");
@@ -83,7 +105,7 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
       setNote("");
       onOpenChange(false);
     } catch {
-      toast.error("Something went wrong");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }

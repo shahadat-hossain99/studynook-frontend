@@ -17,7 +17,7 @@ const Footer = () => {
       {/* TOP GLOW */}
       <div className="absolute top-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-500/10 blur-3xl" />
 
-      <div className="max-w-11/12 mx-auto px-4 md:px-6 pt-16 pb-8 relative z-10">
+      <div className="max-w-4/5 mx-auto px-4 md:px-6 pt-16 pb-8 relative z-10">
         {/* TOP SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* BRAND */}

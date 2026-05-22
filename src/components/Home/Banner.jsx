@@ -20,7 +20,7 @@ const Banner = () => {
       <div
         className="
           relative z-10
-          max-w-11/12 mx-auto
+          max-w-4/5 mx-auto
           px-5 md:px-6
           pt-10 pb-14
           md:pt-20 md:pb-20

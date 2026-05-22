@@ -32,7 +32,7 @@ const RoomCardSkeleton = () => {
 const loading = () => {
   return (
     <section className="min-h-screen bg-[#0B1120] py-16 px-4">
-      <div className="max-w-11/12 mx-auto">
+      <div className="max-w-4/5 mx-auto">
         {/* HEADING SKELETON */}
         <div className="text-center mb-14 flex flex-col items-center gap-4">
           {/* BADGE */}

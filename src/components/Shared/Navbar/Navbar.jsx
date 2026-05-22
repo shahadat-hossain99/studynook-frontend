@@ -109,7 +109,7 @@ const Navbar = () => {
     <>
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#0B1120]/80 backdrop-blur-xl">
-        <div className="max-w-11/12 mx-auto h-20 px-4 md:px-6 flex items-center justify-between">
+        <div className="max-w-4/5 mx-auto h-20 px-4 md:px-6 flex items-center justify-between">
           {/* LEFT */}
 
           <div className="flex justify-between items-center gap-20">
@@ -240,23 +240,18 @@ const Navbar = () => {
                           key="listings"
                           as={Link}
                           href="/my-listings"
-                          className="mt-1"
-                          startContent={
-                            <FaBookOpen className=" text-slate-400" />
-                          }
+                          className="mt-1 "
                         >
-                          My Listings
+                          <FaBookOpen /> My Listings
                         </Dropdown.Item>
 
                         <Dropdown.Item
                           key="bookings"
                           as={Link}
                           href="/my-bookings"
-                          startContent={
-                            <FaRegCalendarCheck className="text-cyan-400" />
-                          }
                         >
-                          My Bookings
+                          <FaRegCalendarCheck className="text-cyan-400" /> My
+                          Bookings
                         </Dropdown.Item>
 
                         <Dropdown.Item
