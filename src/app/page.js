@@ -1,5 +1,6 @@
 import Banner from "@/components/Home/Banner";
 import FeaturedRooms from "@/components/Home/FeaturedRooms";
+import HowItWorks from "@/components/Home/HowItWorks";
 import Image from "next/image";
 
 export default async function Home() {
@@ -13,6 +14,7 @@ export default async function Home() {
     <div className="">
       <Banner />
       <FeaturedRooms featuredRooms={featuredRooms} />
+      <HowItWorks />
     </div>
   );
 }
