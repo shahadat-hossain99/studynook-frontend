@@ -1,5 +1,5 @@
+import RoomCard from "@/components/UI/Home/RoomCard";
 import NoRoomsFound from "@/components/UI/Room/NoRoomsFound";
-import RoomCard from "@/components/UI/Room/RoomCard";
 
 const RoomPage = async () => {
   const res = await fetch("http://localhost:5004/room");
@@ -12,11 +12,15 @@ const RoomPage = async () => {
       <div className="max-w-11/12 mx-auto">
         {/* HEADING */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-slate-300 backdrop-blur-xl">
-            Available Study Rooms
+          <div className="group relative inline-flex items-center overflow-hidden rounded-full border border-violet-500/20 bg-white/5 px-5 py-2 text-sm text-slate-200 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:shadow-[0_0_35px_rgba(139,92,246,0.35)]">
+            <div className="absolute inset-0 bg-linear-to-r from-violet-500/10 via-cyan-500/10 to-violet-500/10 opacity-80 blur-lg" />
+
+            <span className="relative z-10 font-medium tracking-wide">
+              Available Study Rooms
+            </span>
           </div>
 
-          <h1 className="mt-6 text-4xl md:text-6xl font-bold text-white md:leading-18 font-(family-name:--font-space-grotesk)">
+          <h1 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
             Explore Premium
             <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               Study Spaces

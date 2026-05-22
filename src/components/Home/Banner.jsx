@@ -14,7 +14,7 @@ const Banner = () => {
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/65" />
       {/* GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120]/90 via-[#0B1120]/60 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#0B1120]/90 via-[#0B1120]/60 to-transparent" />
 
       {/* CONTENT */}
       <div
@@ -30,14 +30,18 @@ const Banner = () => {
       >
         <div className="w-full max-w-3xl">
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 text-sm text-slate-200 mb-6">
-            Smart Study Room Booking Platform
+          <div className="group relative mb-5 inline-flex items-center overflow-hidden rounded-full border border-violet-500/20 bg-white/5 px-5 py-2 text-sm text-slate-200 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:shadow-[0_0_35px_rgba(139,92,246,0.35)]">
+            <div className="absolute inset-0 bg-linear-to-r from-violet-500/10 via-cyan-500/10 to-violet-500/10 opacity-80 blur-lg " />
+
+            <span className="relative z-10 font-medium tracking-wide">
+              Smart Study Room Booking Platform
+            </span>
           </div>
 
           {/* HEADING */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight text-white ">
             Find Your Perfect
-            <span className="block bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               Study Environment
             </span>
           </h1>
@@ -54,7 +58,7 @@ const Banner = () => {
               <Button
                 size="lg"
                 radius="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold px-8"
+                className="w-full sm:w-auto bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold px-8"
               >
                 Explore Rooms
                 <FaArrowRight />
