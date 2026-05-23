@@ -15,8 +15,11 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 export const metadata = {
-  title: " StudyNook ",
-  description: " Library Study Room Booking",
+  title: {
+    default: "StudyNook",
+    template: "StudyNook | %s ",
+  },
+  description: "Where Focus Finds its Place. Book your study room in seconds.",
 };
 
 export default function RootLayout({ children }) {

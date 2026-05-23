@@ -1,6 +1,8 @@
 import RoomCard from "@/components/UI/Home/RoomCard";
 import NoRoomsFound from "@/components/UI/Room/NoRoomsFound";
 
+export const metadata = { title: "Available Rooms" };
+
 const RoomPage = async () => {
   const res = await fetch("http://localhost:5004/room");
 

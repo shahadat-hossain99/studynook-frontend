@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, Card } from "@heroui/react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
@@ -14,6 +14,10 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const [values, setValues] = useState({ email: "", password: "" });
+
+  useEffect(() => {
+    document.title = "StudyNook – LogIn";
+  }, []);
 
   // VALIDATION
   const validate = ({ email, password }) => {

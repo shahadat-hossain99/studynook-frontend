@@ -11,6 +11,10 @@ const MyListingsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "StudyNook – My Listings";
+  }, []);
+
+  useEffect(() => {
     if (!session?.user) return;
 
     const fetchListings = async () => {

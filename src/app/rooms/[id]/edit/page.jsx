@@ -29,6 +29,10 @@ const EditRoomPage = () => {
   const [selectedAmenities, setSelectedAmenities] = useState([]);
 
   useEffect(() => {
+    document.title = "StudyNook – Edit Room Info";
+  }, []);
+
+  useEffect(() => {
     if (!session?.user) return;
 
     const fetchRoom = async () => {

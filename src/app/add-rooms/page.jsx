@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button, Card, Input, TextArea } from "@heroui/react";
 
@@ -48,6 +48,10 @@ const amenitiesList = [
 
 const AddRoomForm = () => {
   const [selectedAmenities, setSelectedAmenities] = useState([]);
+
+  useEffect(() => {
+    document.title = "StudyNook – Add Room";
+  }, []);
 
   const handleAmenityToggle = (amenity) => {
     setSelectedAmenities((prev) =>
@@ -184,7 +188,7 @@ const AddRoomForm = () => {
                   <div className="">
                     <Input
                       name="image"
-                      type="text"
+                      type="url"
                       required
                       placeholder="Paste image URL"
                       radius="lg"

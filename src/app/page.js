@@ -5,6 +5,8 @@ import FeaturedRooms from "@/components/Home/FeaturedRooms";
 import HowItWorks from "@/components/Home/HowItWorks";
 import Testimonials from "@/components/Home/Testimonials";
 
+export const metadata = { title: "StudyNook – Home" };
+
 export default async function Home() {
   const res = await fetch("http://localhost:5004/featured", {
     cache: "no-store",

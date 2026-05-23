@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, Card } from "@heroui/react";
 import {
@@ -36,6 +36,10 @@ const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    document.title = "StudyNook – Register";
+  }, []);
 
   const ruleResults = passwordRules.map((rule) => ({
     ...rule,

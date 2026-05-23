@@ -12,6 +12,10 @@ const MyBookingPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "StudyNook – My Bookings";
+  }, []);
+
+  useEffect(() => {
     if (!session?.user) return;
 
     const fetchBookings = async () => {

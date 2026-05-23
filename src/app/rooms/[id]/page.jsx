@@ -21,6 +21,10 @@ import { headers } from "next/headers";
 import RoomOwnerControls from "@/components/UI/RoomDetails/RoomOwnerControls";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Details",
+};
+
 const amenityIcons = {
   "Wi-Fi": <FaWifi />,
   Whiteboard: <FaChalkboard />,
