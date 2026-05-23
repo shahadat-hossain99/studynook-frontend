@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
@@ -99,11 +100,14 @@ const ReviewCard = ({ review }) => (
 
     {/* Reviewer */}
     <div className="flex items-center gap-3">
-      <img
-        src={review.avatar}
-        alt={review.name}
-        className="h-10 w-10 rounded-full object-cover ring-2 ring-violet-500/20"
-      />
+      <div className="relative h-11 w-11  shrink-0 rounded-full overflow-hidden ring-2 ring-violet-500/20">
+        <Image
+          src={review.avatar}
+          alt={review.name}
+          fill
+          className="object-cover"
+        />
+      </div>
       <div>
         <p className="text-sm font-semibold text-white">{review.name}</p>
         <p className="text-xs text-slate-500">
