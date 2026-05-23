@@ -47,7 +47,7 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => {
       className={`group rounded-2xl border transition-all duration-300 ${
         isOpen
           ? "border-violet-500/40 bg-white/[0.07]"
-          : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.06]"
+          : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/6"
       } backdrop-blur-xl overflow-hidden`}
     >
       <button
@@ -63,7 +63,7 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => {
         </span>
 
         <span
-          className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
             isOpen
               ? "border-violet-500/40 bg-violet-500/10 text-violet-400"
               : "border-white/10 bg-white/5 text-slate-400 group-hover:border-white/20"
@@ -82,7 +82,7 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => {
         <div className="overflow-hidden">
           <div className="px-6 pb-5">
             {/* top divider */}
-            <div className="mb-4 h-px w-full bg-gradient-to-r from-violet-500/20 via-cyan-500/20 to-transparent" />
+            <div className="mb-4 h-px w-full bg-linear-to-r from-violet-500/20 via-cyan-500/20 to-transparent" />
             <p className="text-sm text-slate-400 leading-relaxed">
               {faq.answer}
             </p>
@@ -114,7 +114,7 @@ const FAQ = () => {
           <div>
             {/* BADGE */}
             <div className="group relative inline-flex items-center overflow-hidden rounded-full border border-violet-500/20 bg-white/5 px-5 py-1 text-sm text-slate-200 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:shadow-[0_0_35px_rgba(139,92,246,0.35)]">
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-cyan-500/10 to-violet-500/10 opacity-80 blur-lg" />
+              <div className="absolute inset-0 bg-linear-to-r from-violet-500/10 via-cyan-500/10 to-violet-500/10 opacity-80 blur-lg" />
               <span className="relative z-10 font-medium tracking-wide">
                 FAQ
               </span>
@@ -123,7 +123,7 @@ const FAQ = () => {
             {/* TITLE */}
             <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
               Got Questions?
-              <span className="block bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
                 We Have Answers.
               </span>
             </h2>
@@ -137,7 +137,7 @@ const FAQ = () => {
 
           {/* COUNTER PILL */}
           <div className="hidden md:flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-xl self-start md:self-auto">
-            <span className="text-2xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent font-(family-name:--font-space-grotesk)">
+            <span className="text-2xl font-bold bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent font-(family-name:--font-space-grotesk)">
               {faqs.length}
             </span>
             <span className="text-sm text-slate-400">questions answered</span>
@@ -160,7 +160,7 @@ const FAQ = () => {
         {/* BOTTOM CTA */}
         <div className="mt-12 flex flex-col items-center gap-3 text-center">
           <p className="text-slate-500 text-sm">Still have questions?</p>
-          <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-violet-600 to-cyan-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition-all duration-300 hover:scale-105 hover:shadow-violet-500/40">
+          <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-violet-600 to-cyan-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition-all duration-300 hover:scale-105 hover:shadow-violet-500/40">
             <span>Contact Support</span>
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
               →
