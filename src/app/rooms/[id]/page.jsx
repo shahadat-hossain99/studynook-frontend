@@ -95,7 +95,6 @@ const roomDetailsPage = async ({ params }) => {
               <Image src={image} alt={roomName} fill className="object-cover" />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
 
-              {/* TOP LEFT — badge + owner controls */}
               <div className="absolute top-5 left-5 flex items-center gap-3 flex-wrap">
                 <Chip
                   className="bg-black/30 backdrop-blur-xl text-white border border-white/10 px-3"

@@ -21,24 +21,33 @@ const RoomCard = ({ room }) => {
     amenities,
   } = room;
 
-  // SHOW ONLY 3 AMENITIES
   const visibleAmenities = amenities?.slice(0, 3);
 
   const remainingAmenities = amenities?.length - 3;
+
+  const isValidImage =
+    image?.startsWith("http://") ||
+    image?.startsWith("https://") ||
+    image?.startsWith("/");
 
   return (
     <div className="group h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_20px_80px_rgba(139,92,246,0.15)]">
       <div className="flex h-full flex-col">
         {/* IMAGE */}
-        <div className="relative h-60 overflow-hidden">
-          <Image
-            src={image}
-            alt={roomName}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-          />
 
-          {/* OVERLAY */}
+        <div className="relative h-60 overflow-hidden">
+          {isValidImage ? (
+            <Image
+              src={image}
+              alt={roomName}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-white/5 text-slate-600 text-5xl">
+              🏠
+            </div>
+          )}
           <div className="absolute inset-0 bg-linear-to-t from-[#0B1120] via-[#0B1120]/20 to-transparent" />
         </div>
 
