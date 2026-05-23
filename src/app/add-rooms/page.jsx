@@ -17,6 +17,7 @@ import { LuProjector, LuPlugZap } from "react-icons/lu";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
 import { Bounce, toast } from "react-toastify";
 import { redirect } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 const amenitiesList = [
   {
@@ -77,10 +78,14 @@ const AddRoomForm = () => {
 
     console.log(finalRoomData);
 
+    const { data: tokenData } = await authClient.token();
+
     const res = await fetch("http://localhost:5004/room", {
       method: "POST",
       headers: {
         "content-type": "application/json",
+
+        Authorization: `Bearer ${tokenData?.token}`,
       },
       body: JSON.stringify(finalRoomData),
     });
