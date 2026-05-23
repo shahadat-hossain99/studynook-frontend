@@ -1,8 +1,9 @@
 import Banner from "@/components/Home/Banner";
+import CTABanner from "@/components/Home/CtaBanner";
+import FAQ from "@/components/Home/Faq";
 import FeaturedRooms from "@/components/Home/FeaturedRooms";
 import HowItWorks from "@/components/Home/HowItWorks";
 import Testimonials from "@/components/Home/Testimonials";
-import Image from "next/image";
 
 export default async function Home() {
   const res = await fetch("http://localhost:5004/featured", {
@@ -17,6 +18,8 @@ export default async function Home() {
       <FeaturedRooms featuredRooms={featuredRooms} />
       <HowItWorks />
       <Testimonials />
+      <FAQ />
+      {/* <CTABanner /> */}
     </div>
   );
 }
