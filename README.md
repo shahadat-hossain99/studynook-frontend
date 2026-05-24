@@ -26,33 +26,67 @@
 
 ## ✨ Features
 
-- 🔍 **Browse & Filter Rooms** — Search by capacity, floor, amenities (Wi-Fi, projector, whiteboard, AC), and hourly rate
+### 👤 For Users
+
+- 🔑 **Google OAuth Authentication** via BetterAuth with JWT verification
+- 🔍 **Browse & Search Rooms** — search by name, filter by amenities, sort by price or newest
+- ⚡ **Real-time Booking** — select date, start/end time with automatic cost calculation
+- 🚫 **Conflict Detection** — prevents double bookings on the same room and time slot
+- 📋 **My Bookings** — view all personal bookings with status badges
+- ❌ **Cancel Booking** — confirm cancellation with instant UI update
+
+### 🏠 For Room Owners
+
+- ➕ **Add Rooms** — create listings with name, image, floor, capacity, hourly rate, amenities
+- 📁 **My Listings** — view and manage all rooms you've created
+- ✏️ **Edit Room** — update room details with pre-filled form
+- 🗑️ **Delete Room** — confirmation modal with cascade deletion of associated bookings
+- 🔢 **Booking Count** — live counter that increments/decrements with bookings
+
+### 🌐 General
+
+- 🏷️ **Dynamic Page Titles** — every route has a meaningful browser tab title
+- 📱 **Responsive Design** — works on mobile, tablet, and desktop
+- 🪹 **Empty States** — friendly UI when no rooms or bookings are found
+- 🔔 **Toast Notifications** — success and error feedback on every action
+<!-- - 🔍 **Browse & Filter Rooms** — Search by capacity, floor, amenities (Wi-Fi, projector, whiteboard, AC), and hourly rate
 - ⚡ **Real-Time Slot Booking** — Live availability calendar with zero double-booking conflicts
 - 🏢 **Room Listings Management** — Add your own rooms, manage listings, and track occupancy
 - 📅 **My Bookings Dashboard** — View, cancel, or reschedule upcoming and past reservations
 - 🔐 **Secure Authentication** — Powered by [Better Auth](https://better-auth.com/) with MongoDB adapter (login, register, session management)
 - 🎟️ **Membership & Subscription Plans** — Monthly and semester plans with discounted rates and priority access
 - 💬 **Testimonials & FAQ** — Real student reviews and a comprehensive 7-question FAQ section
-- 📱 **Fully Responsive UI** — Seamless experience across mobile, tablet, and desktop
+- 📱 **Fully Responsive UI** — Seamless experience across mobile, tablet, and desktop -->
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer             | Technology                    |
-| ----------------- | ----------------------------- |
-| Framework         | Next.js 16.2.6 (App Router)   |
-| UI Library        | React 19                      |
-| Component Library | HeroUI v3                     |
-| Styling           | Tailwind CSS v4               |
-| Authentication    | Better Auth + MongoDB Adapter |
-| Database Client   | MongoDB v7                    |
-| Carousel/Slider   | Swiper v12                    |
-| Icons             | React Icons v5                |
-| Notifications     | React Toastify v11            |
-| Marquee           | React Fast Marquee            |
-| Linting           | ESLint v9                     |
-| Deployment        | Vercel                        |
+### 🎨 Frontend
+
+| 🔧 Technology         | 📦 Version | 🎯 Purpose                          |
+| --------------------- | ---------- | ----------------------------------- |
+| ⚛️ Next.js            | 16.2.6     | React framework with App Router     |
+| 🖼️ React              | 19.2.4     | UI library                          |
+| 🎨 Tailwind CSS       | v4         | Utility-first styling               |
+| 🧩 HeroUI             | 3.0.5      | Component library                   |
+| 🔐 BetterAuth         | 1.6.11     | Authentication (Google OAuth + JWT) |
+| 🎞️ Framer Motion      | 12.40.0    | Animations & transitions            |
+| 🌊 Lenis              | 1.3.23     | Smooth scroll experience            |
+| 🖱️ Swiper             | 12.1.4     | Carousel / slider                   |
+| 🔔 React Toastify     | 11.1.0     | Toast notifications                 |
+| 🏃 React Fast Marquee | 1.6.5      | Scrolling marquee                   |
+| 🎭 React Icons        | 5.6.0      | Icon library                        |
+
+### 🖥️ Backend
+
+| 🔧 Technology        | 🎯 Purpose                      |
+| -------------------- | ------------------------------- |
+| 🟢 Node.js + Express | REST API server                 |
+| 🍃 MongoDB (Atlas)   | Database                        |
+| 🔑 jose-cjs          | JWT verification via JWKS       |
+| 🌐 CORS              | Cross-origin request handling   |
+| 📦 dotenv            | Environment variable management |
 
 ---
 

@@ -4,7 +4,6 @@ import FAQ from "@/components/Home/Faq";
 import FeaturedRooms from "@/components/Home/FeaturedRooms";
 import HowItWorks from "@/components/Home/HowItWorks";
 import Testimonials from "@/components/Home/Testimonials";
-import SmoothScroll from "@/components/UI/SmoothScroll";
 
 export const metadata = { title: "StudyNook – Home" };
 
@@ -17,14 +16,12 @@ export default async function Home() {
 
   return (
     <div>
-      <SmoothScroll>
-        <Banner />
-        <FeaturedRooms featuredRooms={featuredRooms} />
-        <HowItWorks />
-        <Testimonials />
-        <FAQ />
-        {/* <CTABanner /> */}
-      </SmoothScroll>
+      <Banner />
+      <FeaturedRooms featuredRooms={featuredRooms} />
+      <HowItWorks />
+      <Testimonials />
+      <FAQ />
+      {/* <CTABanner /> */}
     </div>
   );
 }
