@@ -17,7 +17,7 @@ const poppins = Poppins({
 export const metadata = {
   title: {
     default: "StudyNook",
-    template: "StudyNook | %s ",
+    template: "StudyNook - %s ",
   },
   description: "Where Focus Finds its Place. Book your study room in seconds.",
 };

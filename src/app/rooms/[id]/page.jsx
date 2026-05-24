@@ -21,10 +21,6 @@ import { headers } from "next/headers";
 import RoomOwnerControls from "@/components/UI/RoomDetails/RoomOwnerControls";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Details",
-};
-
 const amenityIcons = {
   "Wi-Fi": <FaWifi />,
   Whiteboard: <FaChalkboard />,
@@ -33,6 +29,16 @@ const amenityIcons = {
   "Quiet Zone": <HiMiniSpeakerWave />,
   "Air Conditioning": <FaSnowflake />,
 };
+
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const { token } = await auth.api.getToken({ headers: await headers() });
+  const res = await fetch(`http://localhost:5004/room/${id}`, {
+    headers: { authorization: `Bearer ${token}` },
+  });
+  const room = await res.json();
+  return { title: room?.roomName ?? "Room Details" };
+}
 
 const roomDetailsPage = async ({ params }) => {
   const { id } = await params;

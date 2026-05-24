@@ -1,5 +1,6 @@
 import RoomCard from "@/components/UI/Home/RoomCard";
 import NoRoomsFound from "@/components/UI/Room/NoRoomsFound";
+import RoomFilter from "@/components/UI/Room/RoomFilter";
 
 export const metadata = { title: "Available Rooms" };
 
@@ -35,16 +36,7 @@ const RoomPage = async () => {
           </p>
         </div>
 
-        {/* ROOM GRID */}
-        {allRoom?.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-            {allRoom.map((room) => (
-              <RoomCard key={room._id} room={room} />
-            ))}
-          </div>
-        ) : (
-          <NoRoomsFound />
-        )}
+        <RoomFilter rooms={allRoom} />
       </div>
     </section>
   );
