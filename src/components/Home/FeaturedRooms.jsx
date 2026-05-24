@@ -8,6 +8,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
+import FadeIn from "@/components/UI/FadeIn";
 import "swiper/css";
 import "swiper/css/pagination";
 import RoomCard from "../UI/Home/RoomCard";
@@ -39,18 +40,20 @@ const FeaturedRooms = ({ featuredRooms }) => {
             </div>
 
             {/* TITLE */}
-            <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
-              Discover Premium
-              <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                Study Spaces
-              </span>
-            </h2>
+            <FadeIn direction="up" delay={0.2}>
+              <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
+                Discover Premium
+                <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                  Study Spaces
+                </span>
+              </h2>
 
-            {/* DESCRIPTION */}
-            <p className="mt-6 max-w-2xl text-slate-400 leading-relaxed">
-              Explore peaceful, modern, and fully equipped rooms designed for
-              productivity, collaboration, and deep focus.
-            </p>
+              {/* DESCRIPTION */}
+              <p className="mt-6 max-w-2xl text-slate-400 leading-relaxed">
+                Explore peaceful, modern, and fully equipped rooms designed for
+                productivity, collaboration, and deep focus.
+              </p>
+            </FadeIn>
           </div>
 
           {/* NAV BUTTONS */}

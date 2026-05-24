@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import FadeIn from "@/components/UI/FadeIn";
 
 const reviews = [
   {
@@ -142,19 +143,22 @@ const Testimonials = () => {
             </span>
           </div>
 
-          {/* TITLE */}
-          <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
-            Real Experiences,
-            <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Real Students
-            </span>
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p className="mt-5 max-w-xl text-slate-400 leading-relaxed">
-            Hear from the students, researchers, and professionals who made
-            StudyNook their second home.
-          </p>
+          <FadeIn direction="up">
+            {" "}
+            <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
+              Real Experiences,
+              <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Real Students
+              </span>
+            </h2>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.2}>
+            {/* DESCRIPTION */}
+            <p className="mt-5 max-w-xl text-slate-400 leading-relaxed">
+              Hear from the students, researchers, and professionals who made
+              StudyNook their second home.
+            </p>
+          </FadeIn>
         </div>
       </div>
 

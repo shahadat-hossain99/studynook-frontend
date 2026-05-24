@@ -192,7 +192,7 @@ const RoomFilter = ({ rooms }) => {
       {/* ROOM GRID */}
       {filteredAndSortedRooms.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 md:mt-10 mt-6">
-          {filteredAndSortedRooms.map((room) => (
+          {filteredAndSortedRooms.map((room, index) => (
             <RoomCard key={room._id} room={room} />
           ))}
         </div>

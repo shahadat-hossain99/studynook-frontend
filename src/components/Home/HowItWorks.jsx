@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FiSearch, FiCalendar, FiBookOpen } from "react-icons/fi";
+import FadeIn from "@/components/UI/FadeIn";
 
 const steps = [
   {
@@ -68,18 +69,22 @@ const HowItWorks = () => {
           </div>
 
           {/* TITLE */}
-          <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
-            Book in Three
-            <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Simple Steps
-            </span>
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p className="mt-5 max-w-xl text-slate-400 leading-relaxed">
-            From search to first page turn in under a minute. StudyNook makes
-            reserving your perfect space effortless.
-          </p>
+          <FadeIn direction="up">
+            {" "}
+            <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
+              Book in Three
+              <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Simple Steps
+              </span>
+            </h2>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.2}>
+            {/* DESCRIPTION */}
+            <p className="mt-5 max-w-xl text-slate-400 leading-relaxed">
+              From search to first page turn in under a minute. StudyNook makes
+              reserving your perfect space effortless.
+            </p>
+          </FadeIn>
         </div>
 
         {/* STEPS GRID */}

@@ -49,7 +49,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-slate-300 hover:bg-gradient-to-r hover:from-violet-500 hover:to-cyan-500 hover:text-white transition-all duration-300"
+                  className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-slate-300 hover:bg-linear-to-r hover:from-violet-500 hover:to-cyan-500 hover:text-white transition-all duration-300"
                 >
                   {social.icon}
                 </Link>

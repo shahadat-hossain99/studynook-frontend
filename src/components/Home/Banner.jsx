@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import { FaArrowRight } from "react-icons/fa";
+import FadeIn from "../UI/FadeIn";
 
 const Banner = () => {
   return (
@@ -39,42 +40,51 @@ const Banner = () => {
           </div>
 
           {/* HEADING */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight text-white ">
-            Find Your Perfect
-            <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Study Environment
-            </span>
-          </h1>
+
+          <FadeIn direction="up">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight text-white ">
+              Find Your Perfect
+              <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Study Environment
+              </span>
+            </h1>
+          </FadeIn>
 
           {/* DESCRIPTION */}
-          <p className="mt-5 max-w-2xl text-base md:text-lg text-slate-300 leading-relaxed">
-            Book peaceful and fully equipped study rooms designed for focused
-            students and productive learning experiences.
-          </p>
+
+          <FadeIn direction="up" delay={0.2}>
+            <p className="mt-5 max-w-2xl text-base md:text-lg text-slate-300 leading-relaxed">
+              Book peaceful and fully equipped study rooms designed for focused
+              students and productive learning experiences.
+            </p>
+          </FadeIn>
 
           {/* BUTTONS */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Link href="/rooms" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                radius="lg"
-                className="w-full sm:w-auto bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold px-8"
-              >
-                Explore Rooms
-                <FaArrowRight />
-              </Button>
-            </Link>
-            <Link href="/add-rooms" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                radius="lg"
-                variant="bordered"
-                className="w-full sm:w-auto border-white/10 bg-white/5 text-white hover:bg-white/10 px-8"
-              >
-                Add Your Room
-              </Button>
-            </Link>
-          </div>
+
+          <FadeIn direction="up" delay={0.4}>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link href="/rooms" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  radius="lg"
+                  className="w-full sm:w-auto bg-linear-to-r from-violet-500 to-cyan-500 text-white font-semibold px-8"
+                >
+                  Explore Rooms
+                  <FaArrowRight />
+                </Button>
+              </Link>
+              <Link href="/add-rooms" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  radius="lg"
+                  variant="bordered"
+                  className="w-full sm:w-auto border-white/10 bg-white/5 text-white hover:bg-white/10 px-8"
+                >
+                  Add Your Room
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
 
           {/* STATS */}
           <div className="mt-10 grid grid-cols-3 gap-3">

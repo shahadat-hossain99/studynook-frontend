@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { Button, Chip } from "@heroui/react";
 
@@ -9,7 +10,7 @@ import { FaUsers, FaArrowRight, FaLocationDot } from "react-icons/fa6";
 
 import { MdAttachMoney } from "react-icons/md";
 
-const RoomCard = ({ room }) => {
+const RoomCard = ({ room, index = 0 }) => {
   const {
     _id,
     roomName,
@@ -31,7 +32,12 @@ const RoomCard = ({ room }) => {
     image?.startsWith("/");
 
   return (
-    <div className="group h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_20px_80px_rgba(139,92,246,0.15)]">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      className="group h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_20px_80px_rgba(139,92,246,0.15)]"
+    >
       <div className="flex h-full flex-col">
         {/* IMAGE */}
 
@@ -139,7 +145,7 @@ const RoomCard = ({ room }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
+import { motion } from "framer-motion";
 import { authClient } from "@/lib/auth-client";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -76,7 +77,13 @@ const CancelModal = ({ isOpen, onClose, bookingId, roomName, onCancelled }) => {
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative z-10 w-full max-w-md rounded-2xl bg-[#0F172A] border border-white/10 shadow-2xl p-7">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="relative z-10 w-full max-w-md rounded-2xl bg-[#0F172A] border border-white/10 shadow-2xl p-7"
+      >
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition"
@@ -113,7 +120,7 @@ const CancelModal = ({ isOpen, onClose, bookingId, roomName, onCancelled }) => {
             {loading ? "Cancelling..." : "Yes, Cancel"}
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>,
     document.body,
   );

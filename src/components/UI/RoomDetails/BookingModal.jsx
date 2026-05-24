@@ -5,6 +5,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { MdCalendarMonth, MdAttachMoney, MdClose } from "react-icons/md";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const timeSlots = [
   "08:00",
@@ -126,7 +127,13 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
   `;
 
   const modal = (
-    <div className="fixed inset-0 z-9999 flex items-center justify-center p-4">
+    <div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-9999 flex items-center justify-center p-4"
+    >
       {/* BACKDROP */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
@@ -134,7 +141,7 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
       />
 
       {/* PANEL */}
-      <div className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#0F172A] border border-white/10 shadow-2xl shadow-black/50">
+      <motion.div className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#0F172A] border border-white/10 shadow-2xl shadow-black/50">
         {/* CLOSE */}
         <button
           onClick={() => onOpenChange(false)}
@@ -275,7 +282,7 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
             </button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 

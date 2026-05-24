@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import FadeIn from "@/components/UI/FadeIn";
 import { Button, Card, Input, TextArea } from "@heroui/react";
 
 import {
@@ -84,7 +84,7 @@ const AddRoomForm = () => {
 
     const { data: tokenData } = await authClient.token();
 
-    const res = await fetch("${process.env.NEXT_PUBLIC_SERVER_URL}/room", {
+    const res = await fetch("http://localhost:5004/room", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -111,7 +111,7 @@ const AddRoomForm = () => {
         transition: Bounce,
       });
       form.reset();
-      redirect("/");
+      redirect("/rooms");
     } else {
       toast.error("Failed to add destination.", {
         position: "top-center",
@@ -141,17 +141,19 @@ const AddRoomForm = () => {
               Add Your Room
             </span>
           </div>
-          <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
-            Add New{" "}
-            <span className="bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Study Room
-            </span>
-          </h2>
-
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Create a premium study environment for students and learners. Fill
-            in all the room details below.
-          </p>
+          <FadeIn direction="up" delay={0.2}>
+            {" "}
+            <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
+              Add New{" "}
+              <span className="bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Study Room
+              </span>
+            </h2>
+            <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+              Create a premium study environment for students and learners. Fill
+              in all the room details below.
+            </p>
+          </FadeIn>
         </div>
 
         {/* FORM CARD */}

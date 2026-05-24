@@ -187,13 +187,6 @@ const Navbar = () => {
                           {user?.name.charAt(0)}
                         </Avatar.Fallback>
                       </Avatar>
-
-                      {/* <div className="hidden xl:block">
-                        <h4 className="text-sm font-semibold text-white leading-none">
-                          {user?.name}
-                        </h4>
-                        <p className="text-xs text-slate-400 mt-1">Student</p>
-                      </div> */}
                     </Dropdown.Trigger>
 
                     <Dropdown.Popover className="bg-[#111827] border border-white/10 shadow-2xl shadow-black/50 min-w-55 rounded-2xl">
@@ -304,23 +297,7 @@ const Navbar = () => {
                 </>
               )}
             </div>
-            <div className="flex flex-col items-center gap-5">
-              {/* <div className="flex flex-col  items-center gap-3 py-1">
-                <div>
-                  <p className="text-sm font-semibold text-white">
-                    {user?.name}
-                  </p>
-                  <p className="text-xs text-slate-400">{user?.email}</p>
-                </div>
-              </div> */}
-              {/* <Button
-                onPress={handleLogout}
-                className=" w-full bg-red-500/10 text-red-400 border border-red-500/20"
-              >
-                <FaSignOutAlt />
-                Logout
-              </Button> */}
-            </div>
+            <div className="flex flex-col items-center gap-5"></div>
           </div>
         </div>
       </nav>

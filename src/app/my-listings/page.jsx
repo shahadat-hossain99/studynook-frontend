@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import FadeIn from "@/components/UI/FadeIn";
 import { authClient } from "@/lib/auth-client";
 import RoomCard from "@/components/UI/Home/RoomCard";
 import Link from "next/link";
@@ -46,17 +47,20 @@ const MyListingsPage = () => {
     <section className="min-h-screen bg-[#0B1120] py-16 px-4">
       <div className="max-w-11/12 mx-auto">
         {/* HEADING */}
-        <div className="mb-14">
-          <h1 className="mt-6 text-4xl md:text-6xl font-bold text-white md:leading-18 font-(family-name:--font-space-grotesk)">
-            My{" "}
-            <span className="bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Listings
-            </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-slate-400 leading-relaxed">
-            Manage all the study rooms you&apos;ve added to StudyNook.
-          </p>
-        </div>
+
+        <FadeIn direction="up">
+          <div className="mb-14">
+            <h1 className="mt-6 text-4xl md:text-6xl font-bold text-white md:leading-18 font-(family-name:--font-space-grotesk)">
+              My{" "}
+              <span className="bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Listings
+              </span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-slate-400 leading-relaxed">
+              Manage all the study rooms you&apos;ve added to StudyNook.
+            </p>
+          </div>
+        </FadeIn>
 
         {loading ? (
           // Skeleton loader

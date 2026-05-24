@@ -1,7 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
+import FadeIn from "@/components/UI/FadeIn";
 
 const faqs = [
   {
@@ -43,7 +45,10 @@ const faqs = [
 
 const FAQItem = ({ faq, index, isOpen, onToggle }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
       className={`group rounded-2xl border transition-all duration-300 ${
         isOpen
           ? "border-violet-500/40 bg-white/[0.07]"
@@ -89,7 +94,7 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -120,19 +125,24 @@ const FAQ = () => {
               </span>
             </div>
 
-            {/* TITLE */}
-            <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
-              Got Questions?
-              <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                We Have Answers.
-              </span>
-            </h2>
+            <FadeIn direction="up">
+              {" "}
+              {/* TITLE */}
+              <h2 className="mt-6 text-4xl md:text-6xl font-bold text-white leading-tight font-(family-name:--font-space-grotesk)">
+                Got Questions?
+                <span className="block bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                  We Have Answers.
+                </span>
+              </h2>
+            </FadeIn>
 
-            {/* DESCRIPTION */}
-            <p className="mt-5 max-w-xl text-slate-400 leading-relaxed">
-              Everything you need to know about booking, cancellations,
-              amenities, and more — answered in one place.
-            </p>
+            <FadeIn direction="up" delay={0.3}>
+              {/* DESCRIPTION */}
+              <p className="mt-5 max-w-xl text-slate-400 leading-relaxed">
+                Everything you need to know about booking, cancellations,
+                amenities, and more — answered in one place.
+              </p>
+            </FadeIn>
           </div>
 
           {/* COUNTER PILL */}
