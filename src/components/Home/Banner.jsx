@@ -9,7 +9,7 @@ const Banner = () => {
       {/* BACKGROUND IMAGE */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/banner.jpg')" }}
+        style={{ backgroundImage: "url('/Banner.jpg')" }}
       />
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/65" />

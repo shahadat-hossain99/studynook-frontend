@@ -2,13 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-import { Button, Input, Separator } from "@heroui/react";
-
+import { Separator } from "@heroui/react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
 import { FaXTwitter } from "react-icons/fa6";
-
 import { MdOutlineMail, MdOutlinePhone, MdArrowOutward } from "react-icons/md";
 
 const Footer = () => {
@@ -30,10 +26,8 @@ const Footer = () => {
                 height={50}
                 className="object-contain"
               />
-
               <div>
                 <h2 className="text-2xl font-bold text-white">StudyNook</h2>
-
                 <p className="text-xs text-slate-400 -mt-1">
                   Smart Study Booking
                 </p>
@@ -52,6 +46,9 @@ const Footer = () => {
                 <Link
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-slate-300 hover:bg-gradient-to-r hover:from-violet-500 hover:to-cyan-500 hover:text-white transition-all duration-300"
                 >
                   {social.icon}
@@ -60,21 +57,19 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* QUICK LINKS */}
+          {/* USEFUL LINKS — public routes only */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-5">
-              Quick Links
+              Useful Links
             </h3>
-
             <ul className="space-y-4">
-              {quickLinks.map((link, index) => (
+              {usefulLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
                     className="group flex items-center gap-2 text-slate-400 hover:text-white transition-all duration-300"
                   >
                     <MdArrowOutward className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-
                     {link.label}
                   </Link>
                 </li>
@@ -82,19 +77,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* RESOURCES */}
+          {/* COMPANY */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-5">Resources</h3>
-
+            <h3 className="text-lg font-semibold text-white mb-5">Company</h3>
             <ul className="space-y-4">
-              {resourceLinks.map((link, index) => (
+              {companyLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
                     className="group flex items-center gap-2 text-slate-400 hover:text-white transition-all duration-300"
                   >
                     <MdArrowOutward className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-
                     {link.label}
                   </Link>
                 </li>
@@ -102,63 +95,42 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CONTACT + NEWSLETTER */}
+          {/* CONTACT */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-5">
-              Stay Connected
+              Contact Us
             </h3>
-
             <div className="space-y-4">
               {/* EMAIL */}
-              <div className="flex items-center gap-3 text-slate-400">
-                <div className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-cyan-400">
+              <a
+                href="mailto:support@studynook.com"
+                className="flex items-center gap-3 text-slate-400 hover:text-white transition-all duration-300 group"
+              >
+                <div className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/10 transition-all duration-300">
                   <MdOutlineMail size={20} />
                 </div>
-
                 <div>
                   <p className="text-xs text-slate-500">Email</p>
-
                   <p className="text-sm text-slate-300">
                     support@studynook.com
                   </p>
                 </div>
-              </div>
+              </a>
 
               {/* PHONE */}
-              <div className="flex items-center gap-3 text-slate-400">
-                <div className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-violet-400">
+              <a
+                href="tel:+8801234567890"
+                className="flex items-center gap-3 text-slate-400 hover:text-white transition-all duration-300 group"
+              >
+                <div className="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-violet-400 group-hover:bg-violet-500/10 transition-all duration-300">
                   <MdOutlinePhone size={20} />
                 </div>
-
                 <div>
                   <p className="text-xs text-slate-500">Phone</p>
-
                   <p className="text-sm text-slate-300">+880 1234-567890</p>
                 </div>
-              </div>
+              </a>
             </div>
-
-            {/* NEWSLETTER */}
-            {/* <div className="flex md:flex-col sm:flex-row gap-3 w-full">
-              <div className="flex-1 w-full">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  radius="lg"
-                  classNames={{
-                    input: "text-white",
-                    inputWrapper: "bg-white/5 border border-white/10 h-12",
-                  }}
-                />
-              </div>
-
-              <Button
-                radius="lg"
-                className="w-full sm:w-auto min-w-[120px] h-12 bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-medium"
-              >
-                Subscribe
-              </Button>
-            </div> */}
           </div>
         </div>
 
@@ -170,7 +142,6 @@ const Footer = () => {
           <p className="text-sm text-slate-500 text-center md:text-left">
             © {new Date().getFullYear()} StudyNook. All rights reserved.
           </p>
-
           <div className="flex items-center gap-6">
             <Link
               href="/privacy-policy"
@@ -178,7 +149,6 @@ const Footer = () => {
             >
               Privacy Policy
             </Link>
-
             <Link
               href="/terms"
               className="text-sm text-slate-500 hover:text-white transition-all duration-300"
@@ -194,62 +164,25 @@ const Footer = () => {
 
 export default Footer;
 
-// QUICK LINKS
-const quickLinks = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Rooms",
-    href: "/rooms",
-  },
-  {
-    label: "Add Room",
-    href: "/add-room",
-  },
-  {
-    label: "My Listings",
-    href: "/my-listings",
-  },
+// PUBLIC USEFUL LINKS — no private routes
+const usefulLinks = [
+  { label: "Home", href: "/" },
+  { label: "Rooms", href: "/rooms" },
+  { label: "About", href: "/about" },
 ];
 
-// RESOURCE LINKS
-const resourceLinks = [
-  {
-    label: "My Bookings",
-    href: "/my-bookings",
-  },
-  {
-    label: "About Us",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-  {
-    label: "Support Center",
-    href: "/support",
-  },
+// COMPANY LINKS
+const companyLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Support Center", href: "/support" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
-// SOCIAL LINKS
+// SOCIAL LINKS — current branding
 const socialLinks = [
-  {
-    icon: <FaFacebookF />,
-    href: "https://facebook.com",
-  },
-  {
-    icon: <FaXTwitter />,
-    href: "https://x.com",
-  },
-  {
-    icon: <FaLinkedinIn />,
-    href: "https://linkedin.com",
-  },
-  {
-    icon: <FaInstagram />,
-    href: "https://instagram.com",
-  },
+  { label: "Facebook", icon: <FaFacebookF />, href: "https://facebook.com" },
+  { label: "X", icon: <FaXTwitter />, href: "https://x.com" },
+  { label: "LinkedIn", icon: <FaLinkedinIn />, href: "https://linkedin.com" },
+  { label: "Instagram", icon: <FaInstagram />, href: "https://instagram.com" },
 ];
