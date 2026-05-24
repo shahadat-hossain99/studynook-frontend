@@ -33,7 +33,7 @@ const amenityIcons = {
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const { token } = await auth.api.getToken({ headers: await headers() });
-  const res = await fetch(`http://localhost:5004/room/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/room/${id}`, {
     headers: { authorization: `Bearer ${token}` },
   });
   const room = await res.json();
@@ -56,7 +56,7 @@ const roomDetailsPage = async ({ params }) => {
 
   console.log(token);
 
-  const res = await fetch(`http://localhost:5004/room/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/room/${id}`, {
     headers: {
       authorization: `Bearer ${token}`,
     },

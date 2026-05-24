@@ -8,7 +8,7 @@ import Testimonials from "@/components/Home/Testimonials";
 export const metadata = { title: "StudyNook – Home" };
 
 export default async function Home() {
-  const res = await fetch("http://localhost:5004/featured", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`, {
     cache: "no-store",
   });
 

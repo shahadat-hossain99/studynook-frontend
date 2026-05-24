@@ -39,9 +39,12 @@ const EditRoomPage = () => {
       try {
         const { data: tokenData } = await authClient.token();
 
-        const res = await fetch(`http://localhost:5004/room/${id}`, {
-          headers: { Authorization: `Bearer ${tokenData?.token}` },
-        });
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/room/${id}`,
+          {
+            headers: { Authorization: `Bearer ${tokenData?.token}` },
+          },
+        );
         const data = await res.json();
 
         if (data.ownerUserId !== session?.user?.id) {
@@ -94,14 +97,17 @@ const EditRoomPage = () => {
 
       const { data: tokenData } = await authClient.token();
 
-      const res = await fetch(`http://localhost:5004/room/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${tokenData?.token}`,
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/room/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenData?.token}`,
+          },
+          body: JSON.stringify(updatedRoom),
         },
-        body: JSON.stringify(updatedRoom),
-      });
+      );
 
       const data = await res.json();
 

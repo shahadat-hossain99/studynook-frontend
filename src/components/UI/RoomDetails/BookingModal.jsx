@@ -71,25 +71,28 @@ const BookingModal = ({ isOpen, onOpenChange, room }) => {
       const { data: tokenData } = await authClient.token();
       // console.log(tokenData);
 
-      const res = await fetch(`http://localhost:5004/bookings`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${tokenData?.token}`,
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/bookings`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenData?.token}`,
+          },
+          body: JSON.stringify({
+            roomId: room?._id,
+            roomName: room?.roomName,
+            roomImage: room?.image,
+            bookingDate,
+            startTime,
+            endTime,
+            totalHours,
+            totalCost,
+            specialNote: note,
+            // userEmail: session?.user?.email,
+          }),
         },
-        body: JSON.stringify({
-          roomId: room?._id,
-          roomName: room?.roomName,
-          roomImage: room?.image,
-          bookingDate,
-          startTime,
-          endTime,
-          totalHours,
-          totalCost,
-          specialNote: note,
-          // userEmail: session?.user?.email,
-        }),
-      });
+      );
 
       const data = await res.json();
 

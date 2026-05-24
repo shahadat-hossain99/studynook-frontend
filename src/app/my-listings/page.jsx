@@ -21,11 +21,14 @@ const MyListingsPage = () => {
       try {
         const { data: tokenData } = await authClient.token();
 
-        const res = await fetch(`http://localhost:5004/my-listings`, {
-          headers: {
-            Authorization: `Bearer ${tokenData?.token}`,
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/my-listings`,
+          {
+            headers: {
+              Authorization: `Bearer ${tokenData?.token}`,
+            },
           },
-        });
+        );
 
         const data = await res.json();
         setRooms(data);

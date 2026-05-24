@@ -19,13 +19,19 @@ const RoomOwnerControls = ({ roomId }) => {
 
       const { data: tokenData } = await authClient.token();
 
-      const res = await fetch(`http://localhost:5004/room/${roomId}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${tokenData?.token}` },
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/room/${roomId}`,
+        {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${tokenData?.token}` },
+        },
+      );
       console.log("Response status:", res.status); //
 
-      console.log("Full URL:", `$http://localhost:5004/room/${roomId}`);
+      console.log(
+        "Full URL:",
+        `$${process.env.NEXT_PUBLIC_SERVER_URL}/room/${roomId}`,
+      );
 
       const data = await res.json();
 

@@ -30,10 +30,13 @@ const CancelModal = ({ isOpen, onClose, bookingId, roomName, onCancelled }) => {
 
       console.log("Token:", tokenData?.token);
       console.log("Booking ID:", bookingId);
-      console.log("URL:", `http://localhost:5004/bookings/${bookingId}/cancel`);
+      console.log(
+        "URL:",
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${bookingId}/cancel`,
+      );
 
       const res = await fetch(
-        `http://localhost:5004/bookings/${bookingId}/cancel`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${bookingId}/cancel`,
         {
           method: "PATCH",
           headers: {

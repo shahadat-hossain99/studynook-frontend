@@ -5,7 +5,7 @@ import RoomFilter from "@/components/UI/Room/RoomFilter";
 export const metadata = { title: "Available Rooms" };
 
 const RoomPage = async () => {
-  const res = await fetch("http://localhost:5004/room");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/room`);
 
   const allRoom = await res.json();
   console.log(allRoom);
